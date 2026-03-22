@@ -15,7 +15,11 @@ WeatherSense is a weather app that shows real-time temperature, humidity, and we
 - Open meteo weather API
 
 ## 📸 Screenshots
-(Add images below)
+![Register Page](Register.png)
+![Login Page](Login.png)
+![Home Page](Home.png)
+![Dashboard Page](Dashboard.png)
+![UserProfile Page](Userprofile.png)
+![Weatherforecasting Page](Weatherforecasting.png)
+![Location Page](Location.png)
 
-## 🎥 Demo Video
-(Add video link)
