@@ -1,0 +1,62 @@
+.app-header{
+  width:100vw;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:120;
+  background: rgba(69,102,209,0.98);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height:60px;
+  display:flex;
+  align-items:center;
+}
+.app-header-inner{
+  width:100%;
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap:1rem;
+  padding:0 1rem;
+}
+.app-brand{
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  color:#fff;
+}
+.app-icon{
+  width:40px;
+  height:40px;
+  border-radius:6px;
+  margin-right:0.6rem;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.app-title{
+  font-weight:700;
+  font-size:1.1rem;
+}
+.app-nav{display:flex;gap:1rem;align-items:center;justify-self:center}
+.nav-link{color:#fff;text-decoration:none;font-weight:600;padding:0.45rem 0.7rem;border-radius:6px}
+.nav-link:hover{background:rgba(255,255,255,0.08)}
+
+/* spacer utility for pages that had fixed headers */
+.header-spacer{height:60px}
+
+/* Greeting on the right of the header */
+.header-greeting{
+  justify-self:end;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.03);
+}
+
+@media (max-width: 700px){
+  .app-title{font-size:1rem}
+  .app-icon{width:34px;height:34px}
+  .header-greeting{display:none}
+}

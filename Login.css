@@ -1,0 +1,105 @@
+/* Full-screen cute weather background */
+.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80'); /* Cute weather image */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Semi-transparent overlay for readability */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  z-index: 0;
+}
+
+/* Centered form wrapper */
+.login-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 380px;
+  max-width: 90vw;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+.login-box h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+  font-size: 28px;
+}
+
+/* Input fields */
+.login-box input {
+  width: 100%;
+  padding: 14px 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box input:focus {
+  border: 2px solid #1e90ff;
+  box-shadow: 0 0 8px rgba(30,144,255,0.3);
+}
+
+/* Submit button */
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #1e90ff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-box button:hover {
+  background-color: #0d6efd;
+  transform: translateY(-2px);
+}
+
+/* Footer links */
+.login-box p {
+  margin-top: 18px;
+  color: #555;
+  font-size: 14px;
+}
+
+.login-box a {
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-box a:hover {
+  text-decoration: underline;
+}

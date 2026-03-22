@@ -1,0 +1,424 @@
+/* ICON BOUNCE & FADE ANIMATIONS */
+@keyframes icon-bounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-8px) scale(1.08); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* FORECAST CARDS */
+.forecast-card, .hourly-forecast-card {
+  /* Blue-tinted cards so the dashboard feels cooler than pure black */
+  background: rgba(6,30,60,0.56); /* deep blue semi-transparent */
+  border-radius: 1em;
+  box-shadow: 0 6px 20px rgba(6,30,60,0.18), 0 8px 30px rgba(6,30,60,0.08);
+  padding: 1em 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 1.05rem;
+  animation: fadeIn 0.7s cubic-bezier(0.4,0,0.2,1);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  flex: 1 1 auto;
+  min-width: 120px;
+  max-width: 140px;
+}
+
+.forecast-card:hover, .hourly-forecast-card:hover {
+  background: rgba(6,30,60,0.72);
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 8px 28px rgba(6,30,60,0.45);
+}
+
+.forecast-icon, .hourly-forecast-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0.2em 0;
+  object-fit: contain;
+  background: #fff2;
+  border-radius: 0.5em;
+  padding: 0.2em;
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+}
+
+.forecast-card:hover .forecast-icon,
+.hourly-forecast-card:hover .hourly-forecast-icon {
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: 0 4px 16px #fff5, 0 2px 8px #0002;
+}
+
+.forecast-desc {
+  font-size: 0.95em;
+  margin-bottom: 0.2em;
+  text-align: center;
+}
+
+.forecast-temps {
+  font-size: 1.1em;
+  margin-top: 0.2em;
+}
+
+.forecast-min {
+  color: #b3e0ff;
+  font-weight: 500;
+}
+
+.forecast-max {
+  color: #ff9800;
+  font-weight: 600;
+}
+
+/* --- LAYOUT & ALIGNMENT REWORKED FOR PROFESSIONAL DASHBOARD --- */
+.dash-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 1.5em;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  background: rgba(13, 50, 77, 0.12);
+}
+
+.dash-left-section {
+  min-width: 320px;
+  max-width: 350px;
+  flex: 0 0 320px;
+  background: linear-gradient(180deg, #0d324d, #09303f);
+  padding: 2em 1.2em;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2em;
+  border-radius: 1.5em 0 0 1.5em;
+  min-height: 0;
+  margin-right: 0.5em;
+}
+
+.dash-right-section {
+  flex: 1;
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+  border-radius: 1.5em;
+  box-shadow: 0 4px 24px #0002;
+  padding: 2em 2em 2em 2em;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  gap: 0;
+}
+
+.dashboard-search-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 1.2em;
+  width: 100%;
+}
+
+.forecast-section {
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  width: 100%;
+}
+
+.forecast-cards-row, .hourly-forecast-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  overflow-x: auto;
+  padding-bottom: 0.5em;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.hourly-forecast-row > .hourly-forecast-card {
+  scroll-snap-align: center;
+}
+
+.hourly-forecast-card {
+  min-width: 120px;
+  max-width: 150px;
+  position: relative;
+  /* match forecast-card opacity to ensure consistency */
+  background: rgba(6,30,60,0.56);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.hourly-time {
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  padding: 0.25em 0.6em;
+  border-radius: 999px;
+  margin-bottom: 0.4em;
+}
+
+.hourly-desc {
+  font-size: 0.9em;
+  min-height: 1.2em;
+  text-align: center;
+}
+
+.hourly-temp {
+  margin-top: 0.4em;
+  font-weight: 700;
+  color: #fff9;
+}
+
+.hourly-forecast-section {
+  margin-top: 0;
+  width: 100%;
+}
+
+.HumidityBox {
+  background: rgba(10,85,140,0.12); /* soft blue background */
+  border-radius: 8px;
+  padding: 0.4em 0.8em;
+  margin: 0.3em 0;
+  font-size: 0.95em;
+  min-width: 100px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #d9efff;
+  font-weight: 600;
+  box-shadow: 0 1px 6px rgba(6,30,60,0.08);
+}
+
+/* Responsive adjustments for new layout */
+@media (max-width: 900px) {
+  .dash-section {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 98vw;
+  }
+  .dash-left-section {
+    margin-right: 0;
+    margin-bottom: 1.5em;
+    max-width: 100vw;
+    min-width: 0;
+    width: 100%;
+  }
+  .dash-right-section {
+    max-width: 100vw;
+    min-width: 0;
+    width: 100%;
+    padding: 1.2em 0.7em 1.2em 0.7em;
+  }
+  .forecast-cards-row, .hourly-forecast-row {
+    width: 100%;
+  }
+}
+
+/* --- END LAYOUT REWORK --- */
+
+/* LEFT PANEL */
+.dash-left-section {
+  flex: 1 1 280px;
+  background: linear-gradient(180deg, #071a26, #06232d); /* darker gradient for contrast */
+  padding: 2em;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border-radius: 1.5em 0 0 1.5em;
+  min-height: 0;
+}
+
+/* TIME, LOCATION, TEMP */
+.Time-Section .Time {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.Location {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  cursor: pointer; /* clickable current location */
+}
+
+.Coordinates {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 1em;
+}
+
+.Temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.feels-like {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 1em;
+}
+
+/* WEATHER BOXES */
+.Other-Weather-Section div {
+  margin-bottom: 0.6em;
+  background: rgba(8,38,72,0.5); /* blue-tinted block */
+  padding: 0.7em 1.1em;
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 500;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 1.08rem;
+  box-shadow: 0 6px 20px rgba(8,38,72,0.45);
+  min-width: 220px;
+}
+
+.Other-Weather-Section div:hover {
+  background: rgba(8,38,72,0.62);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* ICON BOX */
+.IconBox img {
+  margin-left: 0.3em;
+  vertical-align: middle;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #fff2;
+  border-radius: 0.5em;
+  padding: 0.2em;
+  animation: icon-bounce 1.5s infinite alternate;
+}
+
+/* RIGHT PANEL */
+.dash-right-section {
+  flex: 2 1 400px;
+  position: relative;
+  /* Use CSS variable --dash-bg to allow dynamic images from inline style or JS; fallback to the login background image */
+  background: var(--dash-bg, url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80')) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 0;
+  border-radius: 0 1.5em 1.5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 2em;
+}
+
+.dash-right-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* overlay color is controllable via --dash-overlay so JS can make it lighter/darker */
+  background: var(--dash-overlay, rgba(0,0,0,0.28));
+  z-index: 0;
+}
+
+.dash-right-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+/* SEARCH BAR WITH ICON */
+.dashboard-search-form {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 1.5em 0;
+}
+
+.dashboard-search-input {
+  padding: 0.6em 1em;
+  border-radius: 0.5em;
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 250px;
+  font-size: 1rem;
+  /* more readable on mixed backgrounds */
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25) inset;
+}
+
+.dashboard-search-button {
+  padding: 0.6em 1em;
+  border-radius: 0.5em;
+  border: none;
+  background: rgba(255,152,0,0.98);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 26px rgba(255,152,0,0.18);
+}
+
+.dashboard-search-button:hover {
+  background: #e68900;
+}
+
+/* RESPONSIVE FORECAST */
+@media (max-width: 1024px) {
+  .dash-section {
+    flex-direction: column;
+    width: 95%;
+  }
+  .dash-left-section, .dash-right-section {
+    border-radius: 1.5em;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .forecast-card, .hourly-forecast-card {
+    min-width: 80vw;
+    max-width: 90vw;
+  }
+}
+
+/* Use the same full-screen background and overlay as the login page for the overall dashboard */
+.dash-background {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+  background-size: cover;
+}
+.dash-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(6,30,60,0.18); /* subtle blue overlay */
+  z-index: 0;
+}
+
+.dash-background > * {
+  position: relative; /* ensure children render above overlay */
+  z-index: 1;
+}

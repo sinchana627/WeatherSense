@@ -1,0 +1,25 @@
+// A small static list of popular cities for autocomplete. You can expand this list or fetch from an API for more cities.
+export const citySuggestions = [
+  "Bangalore",
+  "Mandya",
+  "Mysore",
+  "Mumbai",
+  "Delhi",
+  "Chennai",
+  "Kolkata",
+  "Hyderabad",
+  "Pune",
+  "Ahmedabad",
+  "Jaipur",
+  "Lucknow",
+  "London",
+  "New York",
+  "Paris",
+  "Tokyo",
+  "Sydney",
+  "Toronto",
+  "San Francisco",
+  "Berlin",
+  "Singapore",
+  "Dubai"
+];
